@@ -4,7 +4,8 @@ services:
 
   eclipse-mosquitto:
     container_name: eclipse-mosquitto
-    image: eclipse-mosquitto
+    # image: eclipse-mosquitto
+    image: ghcr.io/cobrafx/domoticz-eclipse-mosquitto:v5
     restart: unless-stopped
     ports:
       - "1883:1883"
@@ -19,10 +20,10 @@ services:
 
 
   domoticz:
- #   image: domoticz/domoticz:stable
-    build:
-      context: .
-      dockerfile: Dockerfile 
+    image: ghcr.io/cobrafx/domoticz-cobra:v5
+#    build:
+#      context: .
+#      dockerfile: Dockerfile 
     container_name: domoticz
     restart: unless-stopped
     tty: true
@@ -58,7 +59,8 @@ services:
 
   zigbee2mqtt:
       container_name: zigbee2mqtt
-      image: koenkk/zigbee2mqtt
+      image: ghcr.io/cobrafx/domoticz-zigbee2mqtt:v5
+      #image: koenkk/zigbee2mqtt
       ports:
         - "8090:8090"
       volumes:

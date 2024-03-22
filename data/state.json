@@ -3,9 +3,9 @@
         "voltage": 2975,
         "battery": 83,
         "contact": true,
-        "device_temperature": 12,
+        "device_temperature": 13,
         "power_outage_count": 741,
-        "trigger_count": 8,
+        "trigger_count": 0,
         "linkquality": 7
     },
     "0x00158d00032198ab": {
@@ -27,9 +27,9 @@
     "0x00158d000309b7e3": {
         "voltage": 2985,
         "battery": 90,
-        "temperature": 17.7,
-        "humidity": 81.9,
-        "pressure": 981,
+        "temperature": 17.39,
+        "humidity": 82.54,
+        "pressure": 980.8,
         "power_outage_count": 50122,
         "linkquality": 0
     },
@@ -64,7 +64,7 @@
         "contact": true,
         "device_temperature": 12,
         "power_outage_count": 1369,
-        "trigger_count": 2,
+        "trigger_count": 0,
         "linkquality": 2
     },
     "0x00158d00039e22ad": {
@@ -73,17 +73,17 @@
         "consumption": 8.062990188598633,
         "energy": 8.06,
         "temperature": 30,
-        "device_temperature": 32,
+        "device_temperature": 30,
         "power_outage_count": 1211,
         "linkquality": 0
     },
     "0x00158d00036c1dc2": {
         "voltage": 2975,
         "battery": 83,
-        "illuminance": 761,
-        "illuminance_lux": 761,
+        "illuminance": 999,
+        "illuminance_lux": 999,
         "occupancy": false,
-        "device_temperature": 12,
+        "device_temperature": 13,
         "power_outage_count": 362,
         "linkquality": 0
     },
@@ -95,7 +95,7 @@
         "temperature": 5,
         "state_left": "OFF",
         "state_right": "OFF",
-        "device_temperature": 13,
+        "device_temperature": 14,
         "power_outage_count": 561,
         "linkquality": 7
     },
@@ -105,7 +105,7 @@
         "consumption": 0.13458772003650665,
         "energy": 0.13,
         "temperature": 41,
-        "device_temperature": 42,
+        "device_temperature": 41,
         "power_outage_count": 1065,
         "linkquality": 0
     },
@@ -129,7 +129,7 @@
         "consumption": 8.260092735290527,
         "energy": 8.26,
         "temperature": 9,
-        "device_temperature": 16,
+        "device_temperature": 17,
         "power_outage_count": 1066,
         "state_system": "OFF",
         "linkquality": 0
@@ -137,9 +137,9 @@
     "0x00158d0003230730": {
         "voltage": 2985,
         "battery": 90,
-        "temperature": 19.97,
-        "humidity": 74.83,
-        "pressure": 981,
+        "temperature": 19.54,
+        "humidity": 73.28,
+        "pressure": 980.7,
         "power_outage_count": 37129,
         "linkquality": 0
     }
