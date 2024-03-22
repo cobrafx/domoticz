@@ -55,3 +55,23 @@ info  2024-03-22 13:51:43: MQTT publish: topic 'zigbee2mqtt/Освітлення
 info  2024-03-22 13:51:45: MQTT publish: topic 'zigbee2mqtt/Розетка котла', payload '{"consumption":8.062990188598633,"device_temperature":30,"energy":8.06,"linkquality":5,"power":0,"power_outage_count":1211,"state":"OFF","temperature":30}'
 info  2024-03-22 13:51:45: MQTT publish: topic 'zigbee2mqtt/Розетка котла', payload '{"consumption":8.062990188598633,"device_temperature":30,"energy":8.06,"linkquality":5,"power":0,"power_outage_count":1211,"state":"OFF","temperature":30}'
 info  2024-03-22 13:52:02: MQTT publish: topic 'zigbee2mqtt/Повторювач над холодильником', payload '{"led":false,"linkquality":0}'
+info  2024-03-22 13:52:35: MQTT publish: topic 'zigbee2mqtt/Датчик руху до гаражу', payload '{"battery":90,"device_temperature":18,"illuminance":1000,"illuminance_lux":1000,"linkquality":2,"occupancy":false,"power_outage_count":120,"voltage":2985}'
+info  2024-03-22 13:53:02: MQTT publish: topic 'zigbee2mqtt/Повторювач над холодильником', payload '{"led":false,"linkquality":0}'
+info  2024-03-22 13:54:02: MQTT publish: topic 'zigbee2mqtt/Повторювач над холодильником', payload '{"led":false,"linkquality":0}'
+info  2024-03-22 13:55:00: MQTT publish: topic 'zigbee2mqtt/Дзвінок на вулиці', payload '{"battery":83,"device_temperature":16,"linkquality":2,"power_outage_count":17,"voltage":2975}'
+info  2024-03-22 13:55:02: MQTT publish: topic 'zigbee2mqtt/Повторювач над холодильником', payload '{"led":false,"linkquality":0}'
+info  2024-03-22 13:56:02: MQTT publish: topic 'zigbee2mqtt/Повторювач над холодильником', payload '{"led":false,"linkquality":0}'
+info  2024-03-22 13:57:02: MQTT publish: topic 'zigbee2mqtt/Повторювач над холодильником', payload '{"led":false,"linkquality":0}'
+info  2024-03-22 13:57:04: MQTT publish: topic 'zigbee2mqtt/Розетка теплої підлоги', payload '{"consumption":0.13458772003650665,"device_temperature":41,"energy":0.13,"linkquality":0,"power":0,"power_outage_count":1065,"state":"OFF","temperature":41}'
+info  2024-03-22 13:57:25: MQTT publish: topic 'zigbee2mqtt/Температура у кухні', payload '{"battery":90,"humidity":72.09,"linkquality":5,"power_outage_count":37129,"pressure":980.5,"temperature":19.49,"voltage":2985}'
+info  2024-03-22 13:57:37: MQTT publish: topic 'zigbee2mqtt/Вимикач освітлення сходів', payload '{"consumption":8.260092735290527,"device_temperature":17,"energy":8.26,"linkquality":5,"power":0,"power_outage_count":1066,"state":"OFF","state_system":"OFF","temperature":9}'
+info  2024-03-22 13:58:02: MQTT publish: topic 'zigbee2mqtt/Повторювач над холодильником', payload '{"led":false,"linkquality":0}'
+info  2024-03-22 13:58:09: MQTT publish: topic 'zigbee2mqtt/Освітлення комори та гаражу', payload '{"consumption":33.23994827270508,"device_temperature":15,"energy":33.24,"linkquality":0,"power":0,"power_outage_count":561,"state":"OFF","state_left":"OFF","state_right":"OFF","temperature":5}'
+info  2024-03-22 13:58:09: MQTT publish: topic 'zigbee2mqtt/Розетка котла', payload '{"consumption":8.062990188598633,"device_temperature":30,"energy":8.06,"linkquality":0,"power":0,"power_outage_count":1211,"state":"OFF","temperature":30}'
+info  2024-03-22 13:59:02: MQTT publish: topic 'zigbee2mqtt/Повторювач над холодильником', payload '{"led":false,"linkquality":0}'
+info  2024-03-22 14:00:02: MQTT publish: topic 'zigbee2mqtt/Повторювач над холодильником', payload '{"led":false,"linkquality":0}'
+info  2024-03-22 14:00:57: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload 'offline'
+info  2024-03-22 14:00:57: Disconnecting from MQTT server
+info  2024-03-22 14:00:57: Stopping zigbee-herdsman...
+info  2024-03-22 14:00:57: Stopped zigbee-herdsman
+info  2024-03-22 14:00:57: Stopped Zigbee2MQTT
