@@ -1,0 +1,75 @@
+version: '3.3'
+
+services:
+
+  eclipse-mosquitto:
+    container_name: eclipse-mosquitto
+    image: eclipse-mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./data/eclipse-mosquitto:/mosquitto/data
+      - ./data/eclipse-mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./log:/mosquitto/log
+    environment:
+      - TZ=Europe/Kiev
+    network_mode: "host"
+
+
+  domoticz:
+ #   image: domoticz/domoticz:stable
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    container_name: domoticz
+    restart: unless-stopped
+    tty: true
+    devices:
+      - /dev/gpiomem:/dev/gpiomem
+      - /dev/mem:/dev/mem
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    ports:
+      - "8080:8080"
+      - "443:443"
+      - "9898:9898"
+      - "4321:4321"
+    volumes:
+      - ./config:/opt/domoticz/userdata
+      - ./backups:/opt/domoticz/backups
+      - ./plugins/SVT:/opt/domoticz/plugins/SVT
+      - ./plugins/zigbee2mqtt:/opt/domoticz/plugins/zigbee2mqtt
+      - ./plugins/modbus-write:/opt/domoticz/plugins/modbus-write
+      - ./plugins/modbus-read:/opt/domoticz/plugins/modbus-read
+      - ./plugins/Domoticz-TinyTUYA-Plugin:/opt/domoticz/plugins/Domoticz-TinyTUYA-Plugin
+      - ./plugins/Feyree-Charger:/opt/domoticz/plugins/Feyree-Charger
+      - ./plugins/Powmr:/opt/domoticz/plugins/Powmr
+      - ./plugins/Temperature-Garderobna:/opt/domoticz/plugins/Temperature-Garderobna
+      - ./plugins/Temperature-Dah:/opt/domoticz/plugins/Temperature-Dah
+      - ./plugins/Sun2000:/opt/domoticz/plugins/Sun2000
+      - ./data:/config
+      - ./templates:/opt/domoticz/www/templates
+      - /sys:/sys
+    environment:
+      - TZ=Europe/Kiev
+      - LOG_PATH=/opt/domoticz/userdata/domoticz.log
+    network_mode: "host"
+
+  zigbee2mqtt:
+      container_name: zigbee2mqtt
+      image: koenkk/zigbee2mqtt
+      ports:
+        - "8090:8090"
+      volumes:
+        - ./data:/app/data
+        - /run/udev:/run/udev:ro
+      devices:
+        #- /dev/ttyACM0:/dev/ttyACM0
+        - /dev/serial/by-id/usb-Texas_Instruments_CC2538_USB_CDC-if00:/dev/ttyACM0
+      restart: always
+      environment:
+        - TZ=Europe/Kiev
+      network_mode: "host"
+
+

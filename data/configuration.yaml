@@ -1,0 +1,60 @@
+homeassistant: false
+permit_join: true
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://127.0.0.1
+frontend:
+  port: 8090
+serial:
+  port: /dev/ttyACM0
+map_options:
+  graphviz:
+    colors:
+      fill:
+        enddevice: '#fff8ce'
+        coordinator: '#e04e5d'
+        router: '#4ea3e0'
+      font:
+        coordinator: '#ffffff'
+        router: '#ffffff'
+        enddevice: '#000000'
+      line:
+        active: '#009900'
+        inactive: '#994444'
+devices:
+  '0x00158d00039e208a':
+    friendly_name: Розетка теплої підлоги
+  '0x00158d00032b8810':
+    friendly_name: Датчик дверей підвалу
+  '0x00158d00014a6581':
+    friendly_name: Вимикач освітлення сходів
+  '0x00158d000490abbb':
+    friendly_name: Освітлення комори та гаражу
+  '0x00158d00032198ab':
+    friendly_name: Датчик дверей гаражу
+  '0x00158d00044b62d1':
+    friendly_name: Кнопка дзвінка
+  '0x00158d00023e7d03':
+    friendly_name: '0x00158d00023e7d03'
+  '0x00158d000309b7e3':
+    friendly_name: Температура у ванній
+  '0x00158d0004447ad2':
+    friendly_name: Датчик протікання води у ванній
+  '0x00158d0004447a4c':
+    friendly_name: Датчик протікання води у підвалі
+  '0x00158d00042bf9b9':
+    friendly_name: Дзвінок на вулиці
+  '0x00158d0003cd58b6':
+    friendly_name: Контакт датчика відкриття вхідних дверей
+  '0x00158d00032b7a8a':
+    friendly_name: '0x00158d00032b7a8a'
+  '0x00158d00039e22ad':
+    friendly_name: Розетка котла
+  '0x00158d00036c1dc2':
+    friendly_name: Датчик руху на сходах
+  '0x00124b0014d9a2a8':
+    friendly_name: Повторювач над холодильником
+  '0x00158d0003021258':
+    friendly_name: Датчик руху до гаражу
+  '0x00158d0003230730':
+    friendly_name: Температура у кухні
