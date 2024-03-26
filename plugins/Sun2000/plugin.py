@@ -50,11 +50,11 @@ class BasePlugin:
             Domoticz.Log("Plugin started")
 
         self.device_info = {
-            1: ("Виробляється зараз", "Usage", 1, 32080),
-            2: ("Вироблено за день", "Usage", 1, 32114),
-            3: ("Фаза А", "General", 8, 32069),
-            4: ("Фаза B", "General", 8, 32070),
-            5: ("Фаза С", "General", 8, 32071)
+            1: ("Виробляється зараз", "Usage", 1, 32080, 2, 32),
+            2: ("Вироблено за день", "Usage", 1, 32114, 2, 32),
+            3: ("Фаза А", "General", 8, 32069, 1, 16),
+            4: ("Фаза B", "General", 8, 32070, 1, 16),
+            5: ("Фаза С", "General", 8, 32071, 1, 16)
         }
 
         for unit, device_info_tuple in self.device_info.items():
@@ -102,11 +102,15 @@ class BasePlugin:
                 name, type_name = device_info_tuple[:2]
                 subtype = device_info_tuple[2] if len(device_info_tuple) > 2 else None
                 reg_address = device_info_tuple[3] if len(device_info_tuple) > 3 else None
+                quantity = device_info_tuple[4] if len(device_info_tuple) > 4 else None
+                decode = device_info_tuple[5] if len(device_info_tuple) > 5 else None
 
-                result = client.read_holding_registers(address=reg_address, count=2, unit=self.unit_id)
+
+                result = client.read_holding_registers(address=reg_address, count=quantity, unit=self.unit_id)
                 if not result.isError():
                     decoder = BinaryPayloadDecoder.fromRegisters(result.registers, byteorder=Endian.Big, wordorder=Endian.Big)
-                    value = decoder.decode_32bit_int() if unit == 2 else decoder.decode_16bit_int() / 10
+                    value = decoder.decode_32bit_int() if decode == 32 else decoder.decode_16bit_int() / 10
+                    value = value * 10 if unit == 2 else value
                     if unit in Devices:
                         try:
                             Devices[unit].Update(nValue=0, sValue=str(value));

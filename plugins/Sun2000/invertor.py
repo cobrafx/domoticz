@@ -46,7 +46,8 @@ while True:
              print('active_power = '+ str(active_power))
              cmd = ('http://cobra:18011982fx@192.168.0.3:8080/json.htm?type=command&param=udevice&idx=194&nvalue=0&svalue=' + str(active_power))
              try:
-               requests.get(cmd)
+               print("Ok")
+               #requests.get(cmd)
              except:
                print("Send")
           else:
@@ -71,7 +72,8 @@ while True:
              print('daily_power = '+ str(daily_power))
              cmd = ('http://cobra:18011982fx@192.168.0.3:8080/json.htm?type=command&param=udevice&idx=195&nvalue=0&svalue=' + str(daily_power))
              try:
-               requests.get(cmd)
+               print("Ok")
+               #requests.get(cmd)
              except:
                print("Send")
           else:
@@ -93,7 +95,8 @@ while True:
              print('Ua = '+ str(Ua))
              cmd = ('http://cobra:18011982fx@192.168.0.3:8080/json.htm?type=command&param=udevice&idx=262&nvalue=0&svalue=' + str(Ua))
              try:
-               requests.get(cmd)
+               print("Ok")
+               #requests.get(cmd)
              except:
                print("Send")
           else:
@@ -115,7 +118,8 @@ while True:
              print('Ub = '+ str(Ub))
              cmd = ('http://cobra:18011982fx@192.168.0.3:8080/json.htm?type=command&param=udevice&idx=263&nvalue=0&svalue=' + str(Ub))
              try:
-               requests.get(cmd)
+               print("Ok")
+               #requests.get(cmd)
              except:
                print("Send")
           else:
@@ -137,7 +141,8 @@ while True:
              print('Ub = '+ str(Uc))
              cmd = ('http://cobra:18011982fx@192.168.0.3:8080/json.htm?type=command&param=udevice&idx=264&nvalue=0&svalue=' + str(Uc))
              try:
-               requests.get(cmd)
+               print("Ok")
+               #requests.get(cmd)
              except:
                print("Send")
           else:
