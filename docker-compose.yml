@@ -52,6 +52,7 @@ services:
       - ./data:/config
       - ./templates:/opt/domoticz/www/templates
       - /sys:/sys
+      - ./scripts/dzVents:/opt/domoticz/scripts/dzVents
     environment:
       - TZ=Europe/Kiev
       - LOG_PATH=/opt/domoticz/userdata/domoticz.log

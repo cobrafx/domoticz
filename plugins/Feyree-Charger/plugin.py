@@ -86,6 +86,18 @@ class BasePlugin:
             device.Create()
             device.Update(0, "Unknown")
 
+
+        if 3 in Devices:
+            Devices[3].Update(nValue=Devices[3].nValue, sValue=Devices[3].sValue)
+            if self.debug:
+                Domoticz.Log("Device Charge Control updated.")
+        else:
+            Domoticz.Log("Creating device Charge Control ...")
+            device = Domoticz.Device(Name="Charge Control", Unit=3, TypeName="Switch", Image=9, Used=1)
+            device.Create()
+            device.Update(0, "Off")
+
+
     def onStop(self):
         if Parameters["Mode3"] == "Debug":
             Domoticz.Log("onStop called")
@@ -114,6 +126,12 @@ class BasePlugin:
                 Devices[1].Update(0, str(level))
                 Domoticz.Log("Switch Level to {}".format(level))
 
+        if status == 'charing':
+            Devices[3].Update(nValue=1, sValue="On")
+        else:
+            Devices[3].Update(nValue=0, sValue="Off")
+
+
     def onCommand(self, Unit, Command, Level, Hue):
         if Parameters["Mode3"] == "Debug":
             Domoticz.Log("onCommand called for Unit {}: Command '{}', Level: {}, Hue: {}".format(Unit, Command, Level, Hue))
@@ -122,6 +140,15 @@ class BasePlugin:
             amper = self.get_amper_by_level(Level)
             self.changeLevelAmper(amper)
             Domoticz.Log("Changed to {}A".format(amper))
+
+        elif Unit == 3:
+            if Command == "On":
+                self.setCharge(True)
+                Devices[3].Update(nValue=1, sValue="On")
+            elif Command == "Off":
+                self.setCharge(False)
+                Devices[3].Update(nValue=0, sValue="Off")
+
 
     def onNotification(self, Name, Subject, Text, Status, Priority, Sound, ImageFile):
         if Parameters["Mode3"] == "Debug":
@@ -150,6 +177,24 @@ class BasePlugin:
             if item["text"] == text + "A":
                 return item["level"]
         return 0
+
+
+    def setCharge(self, charge):
+        try:
+            data = self.tuya_device.status()
+            status = data['dps'].get('101', 'Unknown')
+
+            if charge:
+                if status != 'charing':
+                    self.tuya_device.set_value(124, "OpenCharging")
+                    Domoticz.Log("Started charging")
+            else:
+                if status == 'charing':
+                    self.tuya_device.set_value(124, "CloseCharging")
+                    Domoticz.Log("Stopped charging")
+
+        except Exception as e:
+            Domoticz.Error(f"Failed to set charge status: {e}")
 
 
     def changeLevelAmper(self, Amper):
@@ -184,6 +229,9 @@ class BasePlugin:
              if Parameters["Mode3"] == "Debug":
                 Domoticz.Log("Встановлено: {} A".format(Amper))
              Devices[1].Update(nValue=0, sValue=str(Amper))
+
+
+
              break
            else:
              if Parameters["Mode3"] == "Debug":

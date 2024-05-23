@@ -22,6 +22,7 @@
 import Domoticz
 import paho.mqtt.client as mqtt
 import time
+import datetime
 
 class BasePlugin:
 
@@ -47,8 +48,8 @@ class BasePlugin:
         self.mqttClient.on_connect = self.onConnect
         self.mqttClient.on_message = self.onMessage
         self.mqttClient.username_pw_set(Parameters["Username"], Parameters["Password"])
-        self.mqttClient.connect(Parameters["Mode1"], int(Parameters["Mode2"]))
-        self.mqttClient.loop_start()
+        # self.mqttClient.connect(Parameters["Mode1"], int(Parameters["Mode2"]))
+        # self.mqttClient.loop_start()
 
 
         specialOptions = {
@@ -195,8 +196,14 @@ class BasePlugin:
     def onHeartbeat(self):
         if not self.mqttClient.is_connected():
             Domoticz.Log("Attempting MQTT reconnection...")
-            self.mqttClient.connect(Parameters["Mode1"], int(Parameters["Mode2"]))
-            self.mqttClient.loop_start()
+            try:
+                self.mqttClient.connect(Parameters["Mode1"], int(Parameters["Mode2"]))
+                self.mqttClient.loop_start()
+            except Exception as e:
+                Domoticz.Error(f"Failed to reconnect to MQTT server: {e}")
+        else:
+            current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            self.mqttClient.publish("powmr/keep_alive", current_time)
 
 global _plugin
 _plugin = BasePlugin()
