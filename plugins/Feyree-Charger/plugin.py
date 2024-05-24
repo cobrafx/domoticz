@@ -148,7 +148,7 @@ class BasePlugin:
             elif Command == "Off":
                 self.setCharge(False)
                 Devices[3].Update(nValue=0, sValue="Off")
-
+            Domoticz.Log("Changed charge status to {}".format(Command))
 
     def onNotification(self, Name, Subject, Text, Status, Priority, Sound, ImageFile):
         if Parameters["Mode3"] == "Debug":

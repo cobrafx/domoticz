@@ -28,10 +28,10 @@ return {
 
 
           if(power.nValue == 1) then
-            if(current_level == off_level ) then
-                feyree_ampers.switchSelector(min_level)
+            if(domoticz.variables(4).value == 1) then
                 feyree_control.switchOn().afterSec(8)
-                local msg = "Feyree Station переведено на " .. min_level .. " (Продовження)"
+                domoticz.variables(4).set(tostring(0))
+                local msg = "Feyree Station продовження зарядки"
                 domoticz.notify('Feyree Station', msg, domoticz.PRIORITY_HIGH)
                 return
             end
@@ -43,10 +43,10 @@ return {
               local current_level = feyree_ampers.levelName
     
               if(power.nValue == 0) then
-                if(current_level ~= off_level ) then
+                if(domoticz.variables(4).value == 0) then
                     feyree_control.switchOff()
-                    feyree_ampers.switchSelector(off_level).afterSec(5)
-                    local msg = "Feyree Station переведено на " .. off_level .. " (Пауза)"
+                    domoticz.variables(4).set(tostring(1))
+                    local msg = "Feyree Station пауза зарядки"
                     domoticz.notify('Feyree Station', msg, domoticz.PRIORITY_HIGH)
                     return
                 end
