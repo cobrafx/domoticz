@@ -132,10 +132,10 @@ class BasePlugin:
             "powmr/output_frequency": 6,
             "powmr/battery_charge_current": 7,
             "powmr/battery_discharge_current": 8,
-            "powmr/pv_power": 9,
+            "powmr/pv_power": 12,
             "powmr/output_apparent_power": 10,
             "powmr/output_active_power": 11,
-            "powmr/pv_power": 12,
+            "powmr/pv_power": 9,
             "powmr/battery_state_of_charge": 13,
             "powmr/ac_output_load": 14,
             "powmr/operation_mode": 15

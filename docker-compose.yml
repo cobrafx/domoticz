@@ -49,6 +49,8 @@ services:
       - ./plugins/Temperature-Garderobna:/opt/domoticz/plugins/Temperature-Garderobna
       - ./plugins/Temperature-Dah:/opt/domoticz/plugins/Temperature-Dah
       - ./plugins/Sun2000:/opt/domoticz/plugins/Sun2000
+      - ./plugins/Tongou:/opt/domoticz/plugins/Tongou
+      - ./plugins/BMS:/opt/domoticz/plugins/BMS
       - ./data:/config
       - ./templates:/opt/domoticz/www/templates
       - /sys:/sys
@@ -60,16 +62,16 @@ services:
 
   zigbee2mqtt:
       container_name: zigbee2mqtt
-      image: ghcr.io/cobrafx/domoticz-zigbee2mqtt:v5
-      #image: koenkk/zigbee2mqtt
+      #image: ghcr.io/cobrafx/domoticz-zigbee2mqtt:v5
+      image: koenkk/zigbee2mqtt:1.38.0
       ports:
         - "8090:8090"
       volumes:
         - ./data:/app/data
         - /run/udev:/run/udev:ro
       devices:
-        #- /dev/ttyACM0:/dev/ttyACM0
-        - /dev/serial/by-id/usb-Texas_Instruments_CC2538_USB_CDC-if00:/dev/ttyACM0
+        - /dev/ttyACM0:/dev/ttyACM0
+        #- /dev/serial/by-id/usb-Texas_Instruments_CC2538_USB_CDC-if00:/dev/ttyACM0
       restart: always
       environment:
         - TZ=Europe/Kiev

@@ -22,8 +22,6 @@ map_options:
         active: '#009900'
         inactive: '#994444'
 devices:
-  '0x00158d00039e208a':
-    friendly_name: Розетка теплої підлоги
   '0x00158d00032b8810':
     friendly_name: Датчик дверей підвалу
   '0x00158d00014a6581':
@@ -58,3 +56,9 @@ devices:
     friendly_name: Датчик руху до гаражу
   '0x00158d0003230730':
     friendly_name: Температура у кухні
+  '0x00158d00039e208a':
+    friendly_name: Розетка теплої підлоги
+  '0x187a3efffe479508':
+    friendly_name: Бойлер
+advanced:
+  log_level: info
