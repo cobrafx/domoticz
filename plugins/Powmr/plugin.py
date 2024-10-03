@@ -5,8 +5,8 @@
         This plugin reads data from inverter Powmr.
     </description>
     <params>
-        <param field="Mode1" label="MQTT Server Address" width="200px" required="true" default="127.0.0.1"/>
-        <param field="Mode2" label="MQTT Server Port" width="30px" required="true" default="1883"/>
+        <param field="Address" label="MQTT Server Address" width="200px" required="true" default="127.0.0.1"/>
+        <param field="Port" label="Port" width="30px" required="true" default="1883"/>
         <param field="Username" label="MQTT Username" width="200px" required="false" default=""/>
         <param field="Password" label="MQTT Password" width="200px" required="false" default=""/>
         <param field="Mode3" label="Debug" width="75px">
@@ -48,7 +48,7 @@ class BasePlugin:
         self.mqttClient.on_connect = self.onConnect
         self.mqttClient.on_message = self.onMessage
         self.mqttClient.username_pw_set(Parameters["Username"], Parameters["Password"])
-        # self.mqttClient.connect(Parameters["Mode1"], int(Parameters["Mode2"]))
+        # self.mqttClient.connect(Parameters["Address"], int(Parameters["Port"]))
         # self.mqttClient.loop_start()
 
 
@@ -82,7 +82,9 @@ class BasePlugin:
             12: ("PV Power", "General", 6),
             13: ("Battery SoC", "General", 6),
             14: ("AC Output Load", "General", 6),
-            15: ("Operation Mode", "Selector Switch", 18, specialOptions, 0)
+            15: ("Operation Mode", "Selector Switch", 18, specialOptions, 0),
+            16: ("Max Utility Charging", "General", 23),
+            17: ("Active Max Utility Charging", "Switch")
         }
 
         for unit, device_info_tuple in device_info.items():
@@ -138,7 +140,8 @@ class BasePlugin:
             "powmr/pv_power": 9,
             "powmr/battery_state_of_charge": 13,
             "powmr/ac_output_load": 14,
-            "powmr/operation_mode": 15
+            "powmr/operation_mode": 15,
+            "powmr/max_utility_charging_current": 16
         }
 
         operation_modes = [
@@ -193,11 +196,41 @@ class BasePlugin:
                 else:
                     Devices[unit].Update(nValue=0, sValue=str(value))
 
+    def onCommand(self, Unit, Command, Level, Color):
+        Domoticz.Log(f"onCommand called: Unit={Unit}, Command={Command}, Level={Level}")
+        if Unit == 17:  # Наприклад, пристрій для відправки команд
+           if Command == "On":
+               current = 90
+               l = 1
+           if Command == "Off":
+               current = 10
+               l = 0
+           success = self.setChargingCurrent(current)
+           if success:
+               Devices[Unit].Update(nValue=l, sValue=str(Command))
+               Domoticz.Log(f"Charging current set to {current}A successfully.")
+           else:
+               Domoticz.Error(f"Failed to set charging current to {current}A.")
+    
+
+    def setChargingCurrent(self, current):
+        Domoticz.Log(f"Setting charging current to: {current}A")
+        topic = "powmr/commands/change_utility_charging_current"
+        try:
+            self.mqttClient.publish(topic, str(current))
+            Domoticz.Log(f"Published to MQTT: {topic} = {current}A")
+            return True
+        except Exception as e:
+            Domoticz.Error(f"Failed to publish MQTT message: {e}")
+            return False
+
     def onHeartbeat(self):
         if not self.mqttClient.is_connected():
             Domoticz.Log("Attempting MQTT reconnection...")
+            time.sleep(5)  # Чекаємо кілька секунд перед повторною спробою
             try:
-                self.mqttClient.connect(Parameters["Mode1"], int(Parameters["Mode2"]))
+                self.mqttClient.connect(Parameters["Address"], int(Parameters["Port"]))
+                #self.mqttClient.loop_forever()
                 self.mqttClient.loop_start()
             except Exception as e:
                 Domoticz.Error(f"Failed to reconnect to MQTT server: {e}")
@@ -215,6 +248,10 @@ def onStart():
 def onStop():
     global _plugin
     _plugin.onStop()
+
+def onCommand(Unit, Command, Level, Color):
+    global _plugin
+    _plugin.onCommand(Unit, Command, Level, Color)
 
 def onConnect(client, userdata, flags, rc):
     global _plugin
