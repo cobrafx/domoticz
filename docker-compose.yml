@@ -20,7 +20,9 @@ services:
 
 
   domoticz:
-    image: ghcr.io/cobrafx/domoticz-cobra:v5
+#    image: ghcr.io/cobrafx/domoticz-cobra:v5
+#    image: domoticz/domoticz:stable
+    image: domoticz-cobra:v7
 #    build:
 #      context: .
 #      dockerfile: Dockerfile 
@@ -52,6 +54,18 @@ services:
       - ./plugins/Tongou:/opt/domoticz/plugins/Tongou
       - ./plugins/BMS:/opt/domoticz/plugins/BMS
       - ./data:/config
+      - ./plugins/SVT:/opt/domoticz/plugins/userdata/SVT
+      - ./plugins/zigbee2mqtt:/opt/domoticz/userdata/plugins/zigbee2mqtt
+      - ./plugins/modbus-write:/opt/domoticz/userdata/plugins/modbus-write
+      - ./plugins/modbus-read:/opt/domoticz/userdata/plugins/modbus-read
+      - ./plugins/Domoticz-TinyTUYA-Plugin:/opt/domoticz/userdata/plugins/Domoticz-TinyTUYA-Plugin
+      - ./plugins/Feyree-Charger:/opt/domoticz/userdata/plugins/Feyree-Charger
+      - ./plugins/Powmr:/opt/domoticz/userdata/plugins/Powmr
+      - ./plugins/Temperature-Garderobna:/opt/domoticz/userdata/plugins/Temperature-Garderobna
+      - ./plugins/Temperature-Dah:/opt/domoticz/userdata/plugins/Temperature-Dah
+      - ./plugins/Sun2000:/opt/domoticz/userdata/plugins/Sun2000
+      - ./plugins/Tongou:/opt/domoticz/userdata/plugins/Tongou
+      - ./plugins/BMS:/opt/domoticz/userdata/plugins/BMS
       - ./templates:/opt/domoticz/www/templates
       - /sys:/sys
       - ./scripts/dzVents:/opt/domoticz/scripts/dzVents
@@ -63,14 +77,16 @@ services:
   zigbee2mqtt:
       container_name: zigbee2mqtt
       #image: ghcr.io/cobrafx/domoticz-zigbee2mqtt:v5
-      image: koenkk/zigbee2mqtt:1.38.0
+      #image: koenkk/zigbee2mqtt:1.38.0
+      image: koenkk/zigbee2mqtt:1.40.2
       ports:
         - "8090:8090"
       volumes:
         - ./data:/app/data
         - /run/udev:/run/udev:ro
       devices:
-        - /dev/ttyACM0:/dev/ttyACM0
+        # - /dev/ttyACM0:/dev/ttyACM0
+        - /dev/serial/by-id/usb-Texas_Instruments_CC2538_USB_CDC-if00:/dev/ttyACM0
         #- /dev/serial/by-id/usb-Texas_Instruments_CC2538_USB_CDC-if00:/dev/ttyACM0
       restart: always
       environment:

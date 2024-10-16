@@ -1,0 +1,142 @@
+[2024-10-16 13:34:14] info: 	z2m: Logging to console, file (filename: log.log)
+[2024-10-16 13:34:14] info: 	z2m: Starting Zigbee2MQTT version 1.40.2 (commit #e06848d)
+[2024-10-16 13:34:14] info: 	z2m: Starting zigbee-herdsman (2.1.3)
+[2024-10-16 13:34:15] info: 	zh:zstack:znp: Opening SerialPort with {"path":"/dev/ttyACM0","baudRate":115200,"rtscts":false,"autoOpen":false}
+[2024-10-16 13:34:15] info: 	zh:zstack:znp: Serialport opened
+[2024-10-16 13:34:15] info: 	z2m: zigbee-herdsman started (resumed)
+[2024-10-16 13:34:15] info: 	z2m: Coordinator firmware version: '{"meta":{"maintrel":2,"majorrel":2,"minorrel":7,"product":2,"revision":20200211,"transportrev":2},"type":"zStack30x"}'
+[2024-10-16 13:34:15] info: 	z2m: Currently 0 devices are joined.
+[2024-10-16 13:34:15] warning: 	z2m: `permit_join` set to  `true` in configuration.yaml.
+[2024-10-16 13:34:15] warning: 	z2m: Allowing new devices to join.
+[2024-10-16 13:34:15] warning: 	z2m: Set `permit_join` to `false` once you joined all devices.
+[2024-10-16 13:34:15] info: 	z2m: Zigbee: allowing new devices to join.
+[2024-10-16 13:34:15] info: 	z2m: Connecting to MQTT server at mqtt://127.0.0.1
+[2024-10-16 13:34:15] info: 	z2m: Connected to MQTT server
+[2024-10-16 13:34:15] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+[2024-10-16 13:34:15] info: 	z2m: Started frontend on port 8090
+[2024-10-16 13:34:15] info: 	z2m: Zigbee2MQTT started!
+[2024-10-16 13:39:34] info: 	z2m: Starting network scan (includeRoutes 'false')
+[2024-10-16 13:39:35] info: 	z2m: Network scan finished
+[2024-10-16 13:39:36] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/networkmap', payload '{"data":{"routes":false,"type":"graphviz","value":"digraph G {\nnode[shape=record];\n  \"0x00124b00194af511\" [style=\"bold, filled\", fillcolor=\"#e04e5d\", fontcolor=\"#ffffff\", label=\"{Coordinator|0x00124b00194af511 (0x0000)|0 seconds ago}\"];\n}"},"status":"ok"}'
+[2024-10-16 13:39:45] info: 	z2m: Starting network scan (includeRoutes 'false')
+[2024-10-16 13:39:46] info: 	z2m: Network scan finished
+[2024-10-16 13:39:46] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/networkmap', payload '{"data":{"routes":false,"type":"raw","value":{"links":[{"depth":1,"linkquality":170,"lqi":170,"relationship":1,"routes":[],"source":{"ieeeAddr":"0x00158d0004447ad2","networkAddress":56965},"sourceIeeeAddr":"0x00158d0004447ad2","sourceNwkAddr":56965,"target":{"ieeeAddr":"0x00124b00194af511","networkAddress":0},"targetIeeeAddr":"0x00124b00194af511"},{"depth":1,"linkquality":170,"lqi":170,"relationship":1,"routes":[],"source":{"ieeeAddr":"0x00158d0003021258","networkAddress":1409},"sourceIeeeAddr":"0x00158d0003021258","sourceNwkAddr":1409,"target":{"ieeeAddr":"0x00124b00194af511","networkAddress":0},"targetIeeeAddr":"0x00124b00194af511"}],"nodes":[{"failed":[],"friendlyName":"Coordinator","ieeeAddr":"0x00124b00194af511","lastSeen":null,"networkAddress":0,"type":"Coordinator"}]}},"status":"ok","transaction":"7er4o-1"}'
+[2024-10-16 13:46:51] info: 	z2m: Start Touchlink scan
+[2024-10-16 13:46:51] info: 	zh:controller:touchlink: Set InterPAN channel to '11'
+[2024-10-16 13:46:52] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:52] info: 	zh:controller:touchlink: Set InterPAN channel to '15'
+[2024-10-16 13:46:52] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:52] info: 	zh:controller:touchlink: Set InterPAN channel to '20'
+[2024-10-16 13:46:53] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:53] info: 	zh:controller:touchlink: Set InterPAN channel to '25'
+[2024-10-16 13:46:53] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:53] info: 	zh:controller:touchlink: Set InterPAN channel to '12'
+[2024-10-16 13:46:54] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:54] info: 	zh:controller:touchlink: Set InterPAN channel to '13'
+[2024-10-16 13:46:54] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:54] info: 	zh:controller:touchlink: Set InterPAN channel to '14'
+[2024-10-16 13:46:55] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:55] info: 	zh:controller:touchlink: Set InterPAN channel to '16'
+[2024-10-16 13:46:55] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:55] info: 	zh:controller:touchlink: Set InterPAN channel to '17'
+[2024-10-16 13:46:56] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:56] info: 	zh:controller:touchlink: Set InterPAN channel to '18'
+[2024-10-16 13:46:56] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:56] info: 	zh:controller:touchlink: Set InterPAN channel to '19'
+[2024-10-16 13:46:57] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:57] info: 	zh:controller:touchlink: Set InterPAN channel to '21'
+[2024-10-16 13:46:57] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:57] info: 	zh:controller:touchlink: Set InterPAN channel to '22'
+[2024-10-16 13:46:58] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:58] info: 	zh:controller:touchlink: Set InterPAN channel to '23'
+[2024-10-16 13:46:58] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:58] info: 	zh:controller:touchlink: Set InterPAN channel to '24'
+[2024-10-16 13:46:59] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:59] info: 	zh:controller:touchlink: Set InterPAN channel to '26'
+[2024-10-16 13:46:59] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:46:59] info: 	zh:controller:touchlink: Restore InterPAN channel
+[2024-10-16 13:47:02] info: 	z2m: Finished Touchlink scan
+[2024-10-16 13:47:02] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/touchlink/scan', payload '{"data":{"found":[]},"status":"ok","transaction":"gepw0-1"}'
+[2024-10-16 13:47:08] info: 	z2m: Start Touchlink scan
+[2024-10-16 13:47:08] info: 	zh:controller:touchlink: Set InterPAN channel to '11'
+[2024-10-16 13:47:09] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:09] info: 	zh:controller:touchlink: Set InterPAN channel to '15'
+[2024-10-16 13:47:09] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:09] info: 	zh:controller:touchlink: Set InterPAN channel to '20'
+[2024-10-16 13:47:10] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:10] info: 	zh:controller:touchlink: Set InterPAN channel to '25'
+[2024-10-16 13:47:10] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:10] info: 	zh:controller:touchlink: Set InterPAN channel to '12'
+[2024-10-16 13:47:11] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:11] info: 	zh:controller:touchlink: Set InterPAN channel to '13'
+[2024-10-16 13:47:11] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:11] info: 	zh:controller:touchlink: Set InterPAN channel to '14'
+[2024-10-16 13:47:12] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:12] info: 	zh:controller:touchlink: Set InterPAN channel to '16'
+[2024-10-16 13:47:12] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:12] info: 	zh:controller:touchlink: Set InterPAN channel to '17'
+[2024-10-16 13:47:13] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:13] info: 	zh:controller:touchlink: Set InterPAN channel to '18'
+[2024-10-16 13:47:13] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:13] info: 	zh:controller:touchlink: Set InterPAN channel to '19'
+[2024-10-16 13:47:14] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:14] info: 	zh:controller:touchlink: Set InterPAN channel to '21'
+[2024-10-16 13:47:14] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:14] info: 	zh:controller:touchlink: Set InterPAN channel to '22'
+[2024-10-16 13:47:15] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:15] info: 	zh:controller:touchlink: Set InterPAN channel to '23'
+[2024-10-16 13:47:15] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:15] info: 	zh:controller:touchlink: Set InterPAN channel to '24'
+[2024-10-16 13:47:16] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:16] info: 	zh:controller:touchlink: Set InterPAN channel to '26'
+[2024-10-16 13:47:16] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:16] info: 	zh:controller:touchlink: Restore InterPAN channel
+[2024-10-16 13:47:19] info: 	z2m: Finished Touchlink scan
+[2024-10-16 13:47:19] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/touchlink/scan', payload '{"data":{"found":[]},"status":"ok","transaction":"gepw0-2"}'
+[2024-10-16 13:47:32] info: 	z2m: Start Touchlink scan
+[2024-10-16 13:47:32] info: 	zh:controller:touchlink: Set InterPAN channel to '11'
+[2024-10-16 13:47:33] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:33] info: 	zh:controller:touchlink: Set InterPAN channel to '15'
+[2024-10-16 13:47:33] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:33] info: 	zh:controller:touchlink: Set InterPAN channel to '20'
+[2024-10-16 13:47:34] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:34] info: 	zh:controller:touchlink: Set InterPAN channel to '25'
+[2024-10-16 13:47:34] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:34] info: 	zh:controller:touchlink: Set InterPAN channel to '12'
+[2024-10-16 13:47:35] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:35] info: 	zh:controller:touchlink: Set InterPAN channel to '13'
+[2024-10-16 13:47:35] error: 	zh:controller: Failed to keep permit join alive: Error: Cannot execute command, in Inter-PAN mode
+[2024-10-16 13:47:35] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:35] info: 	zh:controller:touchlink: Set InterPAN channel to '14'
+[2024-10-16 13:47:36] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:36] info: 	zh:controller:touchlink: Set InterPAN channel to '16'
+[2024-10-16 13:47:36] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:36] info: 	zh:controller:touchlink: Set InterPAN channel to '17'
+[2024-10-16 13:47:37] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:37] info: 	zh:controller:touchlink: Set InterPAN channel to '18'
+[2024-10-16 13:47:37] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:37] info: 	zh:controller:touchlink: Set InterPAN channel to '19'
+[2024-10-16 13:47:38] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:38] info: 	zh:controller:touchlink: Set InterPAN channel to '21'
+[2024-10-16 13:47:38] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:38] info: 	zh:controller:touchlink: Set InterPAN channel to '22'
+[2024-10-16 13:47:39] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:39] info: 	zh:controller:touchlink: Set InterPAN channel to '23'
+[2024-10-16 13:47:39] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:39] info: 	zh:controller:touchlink: Set InterPAN channel to '24'
+[2024-10-16 13:47:40] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:40] info: 	zh:controller:touchlink: Set InterPAN channel to '26'
+[2024-10-16 13:47:40] warning: 	zh:controller:touchlink: Scan request failed or was not answered: 'Error: Timeout - undefined - 254 - undefined - 4096 - 1 after 500ms'
+[2024-10-16 13:47:40] info: 	zh:controller:touchlink: Restore InterPAN channel
+[2024-10-16 13:47:43] info: 	z2m: Finished Touchlink scan
+[2024-10-16 13:47:43] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/touchlink/scan', payload '{"data":{"found":[]},"status":"ok","transaction":"gepw0-3"}'
+[2024-10-16 13:49:37] error: 	z2m: Entity 'Бойлер' is unknown
+[2024-10-16 13:49:42] error: 	z2m: Entity 'Бойлер' is unknown
+[2024-10-16 14:10:37] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"offline"}'
+[2024-10-16 14:10:37] info: 	z2m: Disconnecting from MQTT server
+[2024-10-16 14:10:37] info: 	z2m: Stopping zigbee-herdsman...
+[2024-10-16 14:10:38] info: 	zh:controller: Wrote coordinator backup to '/app/data/coordinator_backup.json'
+[2024-10-16 14:10:38] info: 	zh:zstack:znp: closing
+[2024-10-16 14:10:38] info: 	zh:zstack:znp: Port closed
+[2024-10-16 14:10:38] info: 	z2m: Stopped zigbee-herdsman
+[2024-10-16 14:10:38] info: 	z2m: Stopped Zigbee2MQTT

@@ -1,0 +1,25 @@
+[2024-10-16 12:47:18] info: 	z2m: Logging to console, file (filename: log.log)
+[2024-10-16 12:47:18] info: 	z2m: Starting Zigbee2MQTT version 1.38.0 (commit #fe048e6)
+[2024-10-16 12:47:18] info: 	z2m: Starting zigbee-herdsman (0.49.2)
+[2024-10-16 12:47:18] info: 	zh:zstack:znp: Opening SerialPort with {"path":"/dev/ttyACM0","baudRate":115200,"rtscts":false,"autoOpen":false}
+[2024-10-16 12:47:18] info: 	zh:zstack:znp: Serialport opened
+[2024-10-16 12:47:19] info: 	z2m: zigbee-herdsman started (resumed)
+[2024-10-16 12:47:19] info: 	z2m: Coordinator firmware version: '{"meta":{"maintrel":2,"majorrel":2,"minorrel":7,"product":2,"revision":20200211,"transportrev":2},"type":"zStack30x"}'
+[2024-10-16 12:47:19] info: 	z2m: Currently 0 devices are joined:
+[2024-10-16 12:47:19] warning: 	z2m: `permit_join` set to  `true` in configuration.yaml.
+[2024-10-16 12:47:19] warning: 	z2m: Allowing new devices to join.
+[2024-10-16 12:47:19] warning: 	z2m: Set `permit_join` to `false` once you joined all devices.
+[2024-10-16 12:47:19] info: 	z2m: Zigbee: allowing new devices to join.
+[2024-10-16 12:47:19] info: 	z2m:mqtt: Connecting to MQTT server at mqtt://127.0.0.1
+[2024-10-16 12:47:19] info: 	z2m:mqtt: Connected to MQTT server
+[2024-10-16 12:47:19] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+[2024-10-16 12:47:19] info: 	z2m: Started frontend on port 8090
+[2024-10-16 12:47:19] info: 	z2m: Zigbee2MQTT started!
+[2024-10-16 12:48:59] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"offline"}'
+[2024-10-16 12:48:59] info: 	z2m:mqtt: Disconnecting from MQTT server
+[2024-10-16 12:48:59] info: 	z2m: Stopping zigbee-herdsman...
+[2024-10-16 12:49:00] info: 	zh:controller: Wrote coordinator backup to '/app/data/coordinator_backup.json'
+[2024-10-16 12:49:00] info: 	zh:zstack:znp: closing
+[2024-10-16 12:49:00] info: 	zh:zstack:znp: Port closed
+[2024-10-16 12:49:00] info: 	z2m: Stopped zigbee-herdsman
+[2024-10-16 12:49:00] info: 	z2m: Stopped Zigbee2MQTT

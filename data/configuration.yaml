@@ -40,25 +40,31 @@ devices:
     friendly_name: Датчик протікання води у ванній
   '0x00158d0004447a4c':
     friendly_name: Датчик протікання води у підвалі
-  '0x00158d00042bf9b9':
-    friendly_name: Дзвінок на вулиці
-  '0x00158d0003cd58b6':
-    friendly_name: Контакт датчика відкриття вхідних дверей
   '0x00158d00032b7a8a':
     friendly_name: '0x00158d00032b7a8a'
   '0x00158d00039e22ad':
     friendly_name: Розетка котла
   '0x00158d00036c1dc2':
     friendly_name: Датчик руху на сходах
-  '0x00124b0014d9a2a8':
-    friendly_name: Повторювач над холодильником
-  '0x00158d0003021258':
-    friendly_name: Датчик руху до гаражу
   '0x00158d0003230730':
     friendly_name: Температура у кухні
   '0x00158d00039e208a':
     friendly_name: Розетка теплої підлоги
   '0x187a3efffe479508':
     friendly_name: Бойлер
+  '0x00158d0003cd58b6':
+    friendly_name: Датчика відкриття вхідних дверей
+  '0x00158d0003021258':
+    friendly_name: Датчик руху до гаражу
+  '0x00124b0014d9a2a8':
+    friendly_name: Повторювач над холодильником
+  '0x00158d00042bf9b9':
+    friendly_name: Дзвінок на вулиці
 advanced:
   log_level: info
+  channel: 25
+  homeassistant_legacy_entity_attributes: false
+  legacy_api: false
+  legacy_availability_payload: false
+device_options:
+  legacy: false

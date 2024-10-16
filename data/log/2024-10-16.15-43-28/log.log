@@ -1,0 +1,40 @@
+[2024-10-16 15:43:28] info: 	z2m: Logging to console, file (filename: log.log)
+[2024-10-16 15:43:28] info: 	z2m: Starting Zigbee2MQTT version 1.40.2 (commit #e06848d)
+[2024-10-16 15:43:28] info: 	z2m: Starting zigbee-herdsman (2.1.3)
+[2024-10-16 15:43:29] info: 	zh:zstack:znp: Opening SerialPort with {"path":"/dev/ttyACM0","baudRate":115200,"rtscts":false,"autoOpen":false}
+[2024-10-16 15:43:29] info: 	zh:zstack:znp: Serialport opened
+[2024-10-16 15:43:29] info: 	z2m: zigbee-herdsman started (resumed)
+[2024-10-16 15:43:29] info: 	z2m: Coordinator firmware version: '{"meta":{"maintrel":2,"majorrel":2,"minorrel":7,"product":2,"revision":20200211,"transportrev":2},"type":"zStack30x"}'
+[2024-10-16 15:43:29] info: 	z2m: Розетка котла (0x00158d00039e22ad): ZNCZ02LM - Xiaomi Mi smart plug (Router)
+[2024-10-16 15:43:29] info: 	z2m: Currently 1 devices are joined.
+[2024-10-16 15:43:29] warning: 	z2m: `permit_join` set to  `true` in configuration.yaml.
+[2024-10-16 15:43:29] warning: 	z2m: Allowing new devices to join.
+[2024-10-16 15:43:29] warning: 	z2m: Set `permit_join` to `false` once you joined all devices.
+[2024-10-16 15:43:29] info: 	z2m: Zigbee: allowing new devices to join.
+[2024-10-16 15:43:29] info: 	z2m: Connecting to MQTT server at mqtt://127.0.0.1
+[2024-10-16 15:43:29] info: 	z2m: Connected to MQTT server
+[2024-10-16 15:43:29] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+[2024-10-16 15:43:29] info: 	z2m: Started frontend on port 8090
+[2024-10-16 15:43:30] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/Розетка котла', payload '{"consumption":8.065908432006836,"device_temperature":35,"energy":8.07,"linkquality":0,"power":1.54,"power_outage_count":1261,"state":"ON"}'
+[2024-10-16 15:43:30] info: 	z2m: Zigbee2MQTT started!
+[2024-10-16 15:44:35] info: 	zh:controller: Interview for '0x00158d00014a6581' started
+[2024-10-16 15:44:35] info: 	z2m: Device 'Вимикач освітлення сходів' joined
+[2024-10-16 15:44:35] info: 	z2m: Starting interview of 'Вимикач освітлення сходів'
+[2024-10-16 15:44:35] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"Вимикач освітлення сходів","ieee_address":"0x00158d00014a6581"},"type":"device_joined"}'
+[2024-10-16 15:44:35] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"Вимикач освітлення сходів","ieee_address":"0x00158d00014a6581","status":"started"},"type":"device_interview"}'
+[2024-10-16 15:44:35] info: 	zh:controller:device: Device '0x00158d00014a6581' is only compliant to revision 'pre-21' of the ZigBee specification (current revision: 23).
+[2024-10-16 15:44:36] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"Вимикач освітлення сходів","ieee_address":"0x00158d00014a6581"},"type":"device_announce"}'
+[2024-10-16 15:44:53] info: 	zh:controller: Succesfully interviewed '0x00158d00014a6581'
+[2024-10-16 15:44:53] info: 	z2m: Successfully interviewed 'Вимикач освітлення сходів', device has successfully been paired
+[2024-10-16 15:44:53] info: 	z2m: Device 'Вимикач освітлення сходів' is supported, identified as: Aqara Smart wall switch (with neutral, single rocker) (QBKG11LM)
+[2024-10-16 15:44:53] info: 	z2m: Configuring 'Вимикач освітлення сходів'
+[2024-10-16 15:44:53] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"definition":{"description":"Smart wall switch (with neutral, single rocker)","exposes":[{"features":[{"access":7,"description":"On/off state of the switch","label":"State","name":"state","property":"state","type":"binary","value_off":"OFF","value_on":"ON","value_toggle":"TOGGLE"}],"type":"switch"},{"access":5,"category":"diagnostic","description":"Instantaneous measured power","label":"Power","name":"power","property":"power","type":"numeric","unit":"W"},{"access":1,"category":"diagnostic","description":"Temperature of the device","label":"Device temperature","name":"device_temperature","property":"device_temperature","type":"numeric","unit":"°C"},{"access":1,"description":"Sum of consumed energy","label":"Energy","name":"energy","property":"energy","type":"numeric","unit":"kWh"},{"access":7,"description":"Decoupled mode","label":"Operation mode","name":"operation_mode","property":"operation_mode","type":"enum","values":["control_relay","decoupled"]},{"access":1,"category":"diagnostic","description":"Triggered action (e.g. a button click)","label":"Action","name":"action","property":"action","type":"enum","values":["single","double","release","hold"]},{"access":1,"category":"diagnostic","description":"Link quality (signal strength)","label":"Linkquality","name":"linkquality","property":"linkquality","type":"numeric","unit":"lqi","value_max":255,"value_min":0}],"model":"QBKG11LM","options":[{"access":2,"description":"Calibrates the power value (percentual offset), takes into effect on next report of device.","label":"Power calibration","name":"power_calibration","property":"power_calibration","type":"numeric"},{"access":2,"description":"Number of digits after decimal point for power, takes into effect on next report of device. This option can only decrease the precision, not increase it.","label":"Power precision","name":"power_precision","property":"power_precision","type":"numeric","value_max":3,"value_min":0},{"access":2,"description":"Calibrates the device_temperature value (absolute offset), takes into effect on next report of device.","label":"Device temperature calibration","name":"device_temperature_calibration","property":"device_temperature_calibration","type":"numeric"},{"access":2,"description":"Calibrates the energy value (percentual offset), takes into effect on next report of device.","label":"Energy calibration","name":"energy_calibration","property":"energy_calibration","type":"numeric"},{"access":2,"description":"Number of digits after decimal point for energy, takes into effect on next report of device. This option can only decrease the precision, not increase it.","label":"Energy precision","name":"energy_precision","property":"energy_precision","type":"numeric","value_max":3,"value_min":0},{"access":2,"description":"Set to false to disable the legacy integration (highly recommended), will change structure of the published payload (default true).","label":"Legacy","name":"legacy","property":"legacy","type":"binary","value_off":false,"value_on":true}],"supports_ota":true,"vendor":"Aqara"},"friendly_name":"Вимикач освітлення сходів","ieee_address":"0x00158d00014a6581","status":"successful","supported":true},"type":"device_interview"}'
+[2024-10-16 15:44:53] info: 	z2m: Successfully configured 'Вимикач освітлення сходів'
+[2024-10-16 15:46:51] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"offline"}'
+[2024-10-16 15:46:51] info: 	z2m: Disconnecting from MQTT server
+[2024-10-16 15:46:51] info: 	z2m: Stopping zigbee-herdsman...
+[2024-10-16 15:46:51] info: 	zh:controller: Wrote coordinator backup to '/app/data/coordinator_backup.json'
+[2024-10-16 15:46:51] info: 	zh:zstack:znp: closing
+[2024-10-16 15:46:51] info: 	zh:zstack:znp: Port closed
+[2024-10-16 15:46:51] info: 	z2m: Stopped zigbee-herdsman
+[2024-10-16 15:46:51] info: 	z2m: Stopped Zigbee2MQTT
