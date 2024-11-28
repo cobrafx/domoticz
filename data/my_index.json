@@ -1,0 +1,49 @@
+[
+  {
+    "fileName": "20230202185525_OTA_lumi.ctrl_ln1.aq1_0.0.0_0095_20220804_59D5CD.ota",
+    "fileVersion": 94,
+    "fileSize": 188030,
+    "url": "https://github.com/Koenkk/zigbee-OTA/raw/master/images/Lumi/20230202185525_OTA_lumi.ctrl_ln1.aq1_0.0.0_0095_20220804_59D5CD.ota",
+    "imageType": 257,
+    "manufacturerCode": 4447,
+    "sha512": "79ab01c83ded9ad1116f8314e1464ebfa0a87947bbabb26904fca72a05e07864cb153330badcc8c9fb0dde834fa31f5707cd2e887f79021dbee98a90e26b1abd",
+    "otaHeaderString": "DR1175r1v1UNENCRYPTED00000JN5169",
+    "modelId": "lumi.ctrl_ln1.aq1"
+  },
+  {
+    "fileName": "LM15_ln1_AQ_V1.0.32_20180625_v32.20181008194104.ota",
+    "fileVersion": 32,
+    "fileSize": 193374,
+    "url": "ota/LM15_ln1_AQ_V1.0.32_20180625_v32.20181008194104.ota",
+    "imageType": 257,
+    "manufacturerCode": 4447,
+    "sha512": "c89e575b65906603c6fde9e77424a8ea91924d279de679bbadd1bfa496988b4cbec7b2faa9632ff09f78e044706dd2ee26ed68e624d4b980705fd49f5d5f580b",
+    "otaHeaderString": "DR1175r1v1UNENCRYPTED00000JN5169",
+    "modelId": "lumi.ctrl_ln1",
+    "force": true
+  },
+  {
+    "fileName": "LM15_SP_aq_V1.3.30_20180724_v30_withCRC.20180724160524.ota",
+    "fileVersion": 30,
+    "fileSize": 191714,
+    "url": "https://github.com/Koenkk/zigbee-OTA/raw/master/images/Lumi/LM15_SP_aq_V1.3.30_20180724_v30_withCRC.20180724160524.ota",
+    "imageType": 257,
+    "manufacturerCode": 4447,
+    "sha512": "8fd5a04c36991ed8b7e4de3a842e15162b6c8e07e3b0dce5e74ef6295cd653b2e69d44ab5e5e0274c6baf7b9633b4639319036b57e3a383606e70bf174229531",
+    "otaHeaderString": "DR1175r1v1UNENCRYPTED00000JN5169",
+    "modelId": "lumi.plug.aq1"
+  },
+  {
+    "fileName": "20230202185209_OTA_lumi.ctrl_ln2.aq1_0.0.0_0095_20220725_0B0798.ota",
+    "fileVersion": 95,
+    "fileSize": 190334,
+    "url": "ota/20230202185209_OTA_lumi.ctrl_ln2.aq1_0.0.0_0095_20220725_0B0798.ota",
+    "imageType": 257,
+    "manufacturerCode": 4447,
+    "sha512": "e2a0d6d247b177a34471d2098e5069c0752cec764871e9b9e1f368427af2a66d54f0d57fa9c2ef135f4ce4f76f86dc38f7c9992040c09ab9bbf291a47c357ff2",
+    "otaHeaderString": "DR1175r1v1UNENCRYPTED00000JN5169",
+    "modelId": "lumi.ctrl_ln2.aq1",
+    "force": true
+  }
+]
+

@@ -21,9 +21,9 @@ return {
           local current_value = tonumber(utility_charging.sValue)
 
           if(kotel.state == "On") then
-            if(soc_value < 100 and current_value ~= 10) then
+            if(soc_value < 100 and current_value ~= 20) then
                 max_utility_charging.switchOff()
-                local msg = "Переведено зарядку акумуляторів (SOC " .. bms_soc.sValue .. "%) на 10A!"
+                local msg = "Переведено зарядку акумуляторів (SOC " .. bms_soc.sValue .. "%) на 20A!"
                 domoticz.notify('Powmr', msg, domoticz.PRIORITY_HIGH)
             end
           else

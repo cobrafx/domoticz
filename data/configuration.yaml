@@ -7,6 +7,7 @@ frontend:
   port: 8090
 serial:
   port: /dev/ttyACM0
+  adapter: zstack
 map_options:
   graphviz:
     colors:
@@ -24,10 +25,12 @@ map_options:
 devices:
   '0x00158d00032b8810':
     friendly_name: Датчик дверей підвалу
-  '0x00158d00014a6581':
-    friendly_name: Вимикач освітлення сходів
   '0x00158d000490abbb':
     friendly_name: Освітлення комори та гаражу
+    legacy: true
+    energy_precision: 0
+    power_precision: 0
+    power_calibration: 0
   '0x00158d00032198ab':
     friendly_name: Датчик дверей гаражу
   '0x00158d00044b62d1':
@@ -44,27 +47,37 @@ devices:
     friendly_name: '0x00158d00032b7a8a'
   '0x00158d00039e22ad':
     friendly_name: Розетка котла
-  '0x00158d00036c1dc2':
-    friendly_name: Датчик руху на сходах
   '0x00158d0003230730':
     friendly_name: Температура у кухні
   '0x00158d00039e208a':
     friendly_name: Розетка теплої підлоги
   '0x187a3efffe479508':
     friendly_name: Бойлер
-  '0x00158d0003cd58b6':
-    friendly_name: Датчика відкриття вхідних дверей
   '0x00158d0003021258':
     friendly_name: Датчик руху до гаражу
   '0x00124b0014d9a2a8':
     friendly_name: Повторювач над холодильником
   '0x00158d00042bf9b9':
     friendly_name: Дзвінок на вулиці
+  '0x00158d00014a6581':
+    friendly_name: Вимикач освітлення сходів
+    legacy: true
+    power_precision: 0
+  '0x00158d0003cd58b6':
+    friendly_name: Контакт датчика відкриття вхідних дверей
+  '0x00158d00036c1dc2':
+    friendly_name: Датчик руху на сходах
 advanced:
   log_level: info
   channel: 25
   homeassistant_legacy_entity_attributes: false
-  legacy_api: false
-  legacy_availability_payload: false
+  legacy_api: true
+  legacy_availability_payload: true
+  last_seen: ISO_8601
 device_options:
-  legacy: false
+  legacy: true
+ota:
+  ikea_ota_use_test_url: false
+  zigbee_ota_override_index_location: my_index.json
+  disable_automatic_update_check: false
+availability: false

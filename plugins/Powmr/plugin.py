@@ -203,7 +203,7 @@ class BasePlugin:
                current = 90
                l = 1
            if Command == "Off":
-               current = 10
+               current = 20
                l = 0
            success = self.setChargingCurrent(current)
            if success:
