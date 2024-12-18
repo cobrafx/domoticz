@@ -1,8 +1,8 @@
 {
     "0x00124b0014d9a2a8": {
         "led": false,
-        "last_seen": "2024-12-18T20:36:54.586Z",
-        "linkquality": 18
+        "last_seen": "2024-12-18T20:47:58.012Z",
+        "linkquality": 21
     },
     "0x00158d00039e208a": {
         "state": "OFF",
@@ -11,13 +11,13 @@
         "energy": 0.15,
         "consumption": 0.15420348942279816,
         "power": 0,
-        "last_seen": "2024-12-18T20:36:57.010Z",
-        "linkquality": 18
+        "last_seen": "2024-12-18T20:47:58.039Z",
+        "linkquality": 21
     },
     "0x00158d0003230730": {
-        "temperature": 19.22,
-        "humidity": 65.61,
-        "pressure": 979.9,
+        "temperature": 19.09,
+        "humidity": 65.9,
+        "pressure": 979.7,
         "last_seen": "2024-12-18T20:29:06.965Z",
         "linkquality": 18,
         "voltage": 2985,
@@ -34,12 +34,12 @@
         "linkquality": 18
     },
     "0x00158d00039e22ad": {
-        "device_temperature": 32,
+        "device_temperature": 31,
         "power_outage_count": 1276,
         "state": "OFF",
         "power": 0,
-        "last_seen": "2024-12-18T20:37:28.022Z",
-        "linkquality": 14,
+        "last_seen": "2024-12-18T20:48:00.135Z",
+        "linkquality": 21,
         "energy": 8.08,
         "consumption": 8.081865310668945
     },
@@ -87,12 +87,12 @@
         "state_left": "OFF",
         "state_right": "OFF",
         "power": 0,
-        "last_seen": "2024-12-18T20:36:55.808Z",
+        "last_seen": "2024-12-18T20:44:26.273Z",
         "linkquality": 18,
         "device_temperature": 10,
         "power_outage_count": 642,
         "energy": 38.57,
-        "consumption": 38.571311950683594
+        "consumption": 38.57145690917969
     },
     "0x00158d00032198ab": {
         "contact": true,
@@ -106,19 +106,19 @@
     },
     "0x00158d00014a6581": {
         "state": "OFF",
-        "last_seen": "2024-12-18T20:37:23.487Z",
+        "last_seen": "2024-12-18T20:43:25.384Z",
         "linkquality": 21,
-        "device_temperature": 13,
+        "device_temperature": 14,
         "power_outage_count": 1145,
         "energy": 9.63,
-        "consumption": 9.630805969238281,
+        "consumption": 9.630871772766113,
         "power": 0
     },
     "0x00158d00036c1dc2": {
-        "occupancy": true,
+        "occupancy": false,
         "illuminance": 3,
         "illuminance_lux": 3,
-        "last_seen": "2024-12-18T20:37:11.642Z",
+        "last_seen": "2024-12-18T20:41:46.124Z",
         "linkquality": 0
     },
     "0x00158d00044b62d1": {
@@ -140,11 +140,11 @@
     "0x187a3efffe479508": {
         "state": "ON",
         "power_outage_memory": "restore",
-        "last_seen": "2024-12-18T20:37:10.280Z",
+        "last_seen": "2024-12-18T20:46:55.655Z",
         "linkquality": 18,
         "power": 0,
         "current": 0,
-        "voltage": 251,
+        "voltage": 252,
         "energy": 449.39
     }
 }
