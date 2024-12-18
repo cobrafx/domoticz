@@ -22,7 +22,7 @@ return {
           local power = domoticz.devices('Powmr - Operation Mode')
           local feyree_control = domoticz.devices('Feyree Charger - Charge Control')
           local off_level = "0A"
-          local min_level = "10A"
+          local min_level = "16A"
           local normal_level = "20A"
           local max_level = "25A"
 

@@ -4,8 +4,8 @@ services:
 
   eclipse-mosquitto:
     container_name: eclipse-mosquitto
-    # image: eclipse-mosquitto
-    image: ghcr.io/cobrafx/domoticz-eclipse-mosquitto:v5
+    image: eclipse-mosquitto
+    #image: ghcr.io/cobrafx/domoticz-eclipse-mosquitto:v5
     restart: unless-stopped
     ports:
       - "1883:1883"
@@ -22,7 +22,8 @@ services:
   domoticz:
 #    image: ghcr.io/cobrafx/domoticz-cobra:v5
 #    image: domoticz/domoticz:stable
-    image: domoticz-cobra:v7
+#    image: ghcr.io/cobrafx/domoticz-cobra:v7
+    image: domoticz:v8
 #    build:
 #      context: .
 #      dockerfile: Dockerfile 
@@ -83,19 +84,32 @@ services:
       #image: ghcr.io/cobrafx/domoticz-zigbee2mqtt:v5
       #image: koenkk/zigbee2mqtt:1.38.0
       # image: koenkk/zigbee2mqtt:1.40.2
-      image: koenkk/zigbee2mqtt:1.41.0
+      #image: koenkk/zigbee2mqtt:1.42.0
+      image: koenkk/zigbee2mqtt:latest
       ports:
         - "8090:8090"
       volumes:
         - ./data:/app/data
         - /run/udev:/run/udev:ro
       devices:
-        # - /dev/ttyACM0:/dev/ttyACM0
-        - /dev/serial/by-id/usb-Texas_Instruments_CC2538_USB_CDC-if00:/dev/ttyACM0
+        #- /dev/ttyACM0:/dev/ttyACM0
+        - /dev/ttyUSB1:/dev/ttyUSB1
         #- /dev/serial/by-id/usb-Texas_Instruments_CC2538_USB_CDC-if00:/dev/ttyACM0
       restart: always
       environment:
         - TZ=Europe/Kiev
       network_mode: "host"
+#      privileged: true
 
 
+
+#  homeassistant:
+#    container_name: homeassistant
+#    image: "ghcr.io/home-assistant/home-assistant:stable"
+#    volumes:
+#      - ./homeassistant/config:/config
+#      - /etc/localtime:/etc/localtime:ro
+#      - /run/dbus:/run/dbus:ro
+#    restart: unless-stopped
+#    privileged: true
+#    network_mode: host
