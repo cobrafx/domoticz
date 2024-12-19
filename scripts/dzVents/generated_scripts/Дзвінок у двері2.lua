@@ -13,11 +13,24 @@ return {
 	   local msg = "Дзвінок у двері!"
        domoticz.notify("Дзвінок", msg, domoticz.PRIORITY_HIGH)
        domoticz.log(msg)
-       
-       	local riven_svitla = domoticz.devices("Рівень освітлення сходів")
+
+	   -- Отримуємо значення змінних "Початок громадського дня" та "Кінець громадського дня"
+	   local twilightBegin = domoticz.variables('Початок громадського дня').value
+	   local twilightEnd = domoticz.variables('Кінець громадського дня').value
+
+
+	   -- Отримуємо поточний час
+	   local currentTime = os.date("%H:%M:%S")  -- Поточний час у форматі "HH:MM:SS"
+
+	   -- Функція для порівняння часу
+	   local function isTimeInRange(timeToCheck, startTime, endTime)
+	       return (timeToCheck >= startTime and timeToCheck <= endTime)
+	   end
+
+
 	    local svitlo_shodiv = domoticz.devices("Вимикач освітлення сходів")
-	    if((riven_svitla.lux < 27) and (svitlo_shodiv.state == "Off")) then
-	        local msg2 = "Освітлення сходів СТАРТ! LUX: " .. riven_svitla.lux
+	    if(not isTimeInRange(currentTime, twilightBegin:sub(12), twilightEnd:sub(12)) and svitlo_shodiv.state == "Off") then
+	        local msg2 = "Освітлення сходів СТАРТ!"
 	        svitlo_shodiv.switchOn()
 	        domoticz.notify('Освітлення сходів', msg2, domoticz.PRIORITY_HIGH)
 	        domoticz.log(msg2)

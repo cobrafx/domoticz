@@ -44,8 +44,6 @@ advanced:
 devices:
   '0x00158d00039e22ad':
     friendly_name: Розетка котла
-  '0x00158d00039e208a':
-    friendly_name: Розерка теплої підлоги
   '0x00158d000490abbb':
     friendly_name: Освітлення комори та гаражу
   '0x00158d0003021258':
@@ -76,5 +74,7 @@ devices:
     friendly_name: Повторювач над холодильником
   '0x187a3efffe479508':
     friendly_name: Бойлер
+  '0x00158d00039e208a':
+    friendly_name: Розетка теплої підлоги
 device_options:
   legacy: false
