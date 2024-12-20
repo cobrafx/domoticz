@@ -74,6 +74,9 @@ services:
       - /sys:/sys
       - ./scripts/dzVents:/opt/domoticz/scripts/dzVents
       - ./addons:/opt/addons
+#    sysctls:
+#      net.core.rmem_max: 262144
+#      net.core.rmem_default: 262144
     environment:
       - TZ=Europe/Kiev
       - LOG_PATH=/opt/domoticz/userdata/domoticz.log
