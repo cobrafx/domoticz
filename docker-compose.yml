@@ -44,6 +44,7 @@ services:
       - "4321:4321"
     volumes:
       - ./config:/opt/domoticz/userdata
+      - ./backups:/opt/domoticz/backups
 #      - ./backups:/opt/domoticz/userdata/backups
       - ./plugins/SVT:/opt/domoticz/plugins/SVT
       - ./plugins/zigbee2mqtt:/opt/domoticz/plugins/zigbee2mqtt

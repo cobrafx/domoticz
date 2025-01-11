@@ -76,5 +76,7 @@ devices:
     friendly_name: Бойлер
   '0x00158d00039e208a':
     friendly_name: Розетка теплої підлоги
+  '0x385cfbfffe96d929':
+    friendly_name: Зарядна станція
 device_options:
   legacy: false
