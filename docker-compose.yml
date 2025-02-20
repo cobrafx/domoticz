@@ -34,7 +34,8 @@ services:
     devices:
       - /dev/gpiomem:/dev/gpiomem
       - /dev/mem:/dev/mem
-      - /dev/ttyUSB0:/dev/ttyUSB0
+      #- /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/ttyPL2303:/dev/ttyUSB0
       - /dev/gpiochip0:/dev/gpiochip0
       - /dev/gpiochip1:/dev/gpiochip1
     ports:
@@ -98,7 +99,8 @@ services:
         - /run/udev:/run/udev:ro
       devices:
         #- /dev/ttyACM0:/dev/ttyACM0
-        - /dev/ttyUSB1:/dev/ttyUSB1
+        # - /dev/ttyUSB1:/dev/ttyUSB1
+        - /dev/ttyCH341:/dev/ttyUSB1
         #- /dev/serial/by-id/usb-Texas_Instruments_CC2538_USB_CDC-if00:/dev/ttyACM0
       restart: always
       environment:
