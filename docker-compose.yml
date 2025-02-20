@@ -87,10 +87,11 @@ services:
 
   zigbee2mqtt:
       container_name: zigbee2mqtt
-      image: ghcr.io/cobrafx/domoticz-zigbee2mqtt:v6
+      #image: ghcr.io/cobrafx/domoticz-zigbee2mqtt:v6
       #image: koenkk/zigbee2mqtt:1.38.0
       # image: koenkk/zigbee2mqtt:1.40.2
       #image: koenkk/zigbee2mqtt:1.42.0
+      image: koenkk/zigbee2mqtt:2.1.1
       #image: koenkk/zigbee2mqtt:latest
       ports:
         - "8090:8090"
