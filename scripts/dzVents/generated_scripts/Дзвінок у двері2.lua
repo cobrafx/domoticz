@@ -10,7 +10,10 @@ return {
 	   local dzvinok = domoticz.devices("Xiaomi Gateway Doorbell")
 	   local zvuk = domoticz.devices("Xiaomi Gateway Volume")
 	   local light = domoticz.devices("Xiaomi RGB Gateway (192.168.0.9)")
-	   local msg = "Дзвінок у двері!"
+	   
+       local dzherelo = device.name  -- Отримуємо назву пристрою, який спрацював
+       local msg = "Дзвінок у двері! Джерело: " .. dzherelo
+	   
        domoticz.notify("Дзвінок", msg, domoticz.PRIORITY_HIGH)
        domoticz.log(msg)
 

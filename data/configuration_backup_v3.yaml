@@ -1,0 +1,80 @@
+homeassistant:
+  enabled: true
+frontend:
+  enabled: true
+  port: 8090
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://localhost
+serial:
+  port: /dev/ttyUSB1
+advanced:
+  channel: 25
+  last_seen: ISO_8601
+  log_level: info
+  network_key:
+    - 56
+    - 230
+    - 248
+    - 246
+    - 253
+    - 82
+    - 183
+    - 17
+    - 236
+    - 223
+    - 81
+    - 147
+    - 60
+    - 235
+    - 233
+    - 89
+  pan_id: 63468
+  ext_pan_id:
+    - 0
+    - 31
+    - 191
+    - 149
+    - 153
+    - 62
+    - 184
+    - 31
+devices:
+  '0x00158d00039e22ad':
+    friendly_name: Розетка котла
+  '0x00158d000490abbb':
+    friendly_name: Освітлення комори та гаражу
+  '0x00158d0003021258':
+    friendly_name: Датчик руху до гаражу
+  '0x00158d00014a6581':
+    friendly_name: Вимикач освітлення сходів
+  '0x00158d00042bf9b9':
+    friendly_name: Дзвінок на вулиці
+  '0x00158d00032198ab':
+    friendly_name: Датчик відкриття дверей гаражу
+  '0x00158d00044b62d1':
+    friendly_name: Дзвінок на дверях
+  '0x00158d0003cd58b6':
+    friendly_name: Датчик відкриття вхідних дверей
+  '0x00158d00036c1dc2':
+    friendly_name: Датчик руху на сходах
+  '0x00158d0003230730':
+    friendly_name: Температура на кухні
+  '0x00158d000309b7e3':
+    friendly_name: Температура у ванній
+  '0x00158d0004447ad2':
+    friendly_name: Датчик протікання у ванній
+  '0x00158d0004447a4c':
+    friendly_name: Датчик протікання у підвалі
+  '0x00158d00032b8810':
+    friendly_name: Датчик відкриття дверей підвалу
+  '0x00124b0014d9a2a8':
+    friendly_name: Повторювач над холодильником
+  '0x187a3efffe479508':
+    friendly_name: Бойлер
+  '0x00158d00039e208a':
+    friendly_name: Розетка теплої підлоги
+  '0x385cfbfffe96d929':
+    friendly_name: Зарядна станція
+device_options: {}
+version: 3

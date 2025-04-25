@@ -22,7 +22,7 @@ return {
             local latitude = domoticz.settings.location.latitude  -- Широта
             local longitude = domoticz.settings.location.longitude -- Довгота
 
-            local apiUrl = 'https://api.sunrise-sunset.org/json?lat=' .. latitude .. '&lng=' .. longitude .. '&formatted=0'
+            local apiUrl = 'https://api.sunrise-sunset.org/json?lat=' .. latitude .. '&lng=' .. longitude .. '&formatted=0&tzid=Europe/Kyiv'
 
 			domoticz.openURL({
 				url = apiUrl,
@@ -38,9 +38,9 @@ return {
 
                     local sunriseVar = domoticz.variables('Початок громадського дня')
                     local sunsetVar = domoticz.variables('Кінець громадського дня')
-
-				 	local twilightBeginLocal =  domoticz.time.makeTime(item.json.results.civil_twilight_begin, true).rawDateTime
-				 	local twilightEndLocal =  domoticz.time.makeTime(item.json.results.civil_twilight_end, true).rawDateTime
+                    
+                    local twilightBeginLocal =  domoticz.time.makeTime(item.json.results.civil_twilight_begin, false).rawDateTime
+                    local twilightEndLocal =  domoticz.time.makeTime(item.json.results.civil_twilight_end, false).rawDateTime
 
 					if not sunriseVar then
                         sunriseVar = domoticz.variables.create('Початок громадського дня', 'string', twilightBeginLocal)

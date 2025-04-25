@@ -1,12 +1,14 @@
-homeassistant: true
-permit_join: false
+homeassistant:
+  enabled: false
 frontend:
+  enabled: true
   port: 8090
 mqtt:
   base_topic: zigbee2mqtt
   server: mqtt://localhost
 serial:
   port: /dev/ttyUSB1
+  adapter: zstack
 advanced:
   channel: 25
   last_seen: ISO_8601
@@ -38,9 +40,6 @@ advanced:
     - 62
     - 184
     - 31
-  homeassistant_legacy_entity_attributes: false
-  legacy_api: false
-  legacy_availability_payload: false
 devices:
   '0x00158d00039e22ad':
     friendly_name: Розетка котла
@@ -48,8 +47,6 @@ devices:
     friendly_name: Освітлення комори та гаражу
   '0x00158d0003021258':
     friendly_name: Датчик руху до гаражу
-  '0x00158d00014a6581':
-    friendly_name: Вимикач освітлення сходів
   '0x00158d00042bf9b9':
     friendly_name: Дзвінок на вулиці
   '0x00158d00032198ab':
@@ -74,9 +71,11 @@ devices:
     friendly_name: Повторювач над холодильником
   '0x187a3efffe479508':
     friendly_name: Бойлер
-  '0x00158d00039e208a':
-    friendly_name: Розетка теплої підлоги
   '0x385cfbfffe96d929':
     friendly_name: Зарядна станція
-device_options:
-  legacy: false
+  '0x00158d00039e208a':
+    friendly_name: Розетка теплої підлоги
+  '0x54ef441000d3863e':
+    friendly_name: Вимикач освітлення сходів
+device_options: {}
+version: 4

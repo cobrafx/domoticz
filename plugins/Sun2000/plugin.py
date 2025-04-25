@@ -54,7 +54,8 @@ class BasePlugin:
             2: ("Вироблено за день", "Usage", 1, 32114, 2, 32),
             3: ("Фаза А", "General", 8, 32069, 1, 16),
             4: ("Фаза B", "General", 8, 32070, 1, 16),
-            5: ("Фаза С", "General", 8, 32071, 1, 16)
+            5: ("Фаза С", "General", 8, 32071, 1, 16),
+            6: ("За місяць", "Usage", 1, 32116, 2, 32)
         }
 
         for unit, device_info_tuple in self.device_info.items():
@@ -111,6 +112,7 @@ class BasePlugin:
                     decoder = BinaryPayloadDecoder.fromRegisters(result.registers, byteorder=Endian.Big, wordorder=Endian.Big)
                     value = decoder.decode_32bit_int() if decode == 32 else decoder.decode_16bit_int() / 10
                     value = value * 10 if unit == 2 else value
+                    value = value * 100 if unit == 6 else value
                     if unit in Devices:
                         try:
                             Devices[unit].Update(nValue=0, sValue=str(value));
