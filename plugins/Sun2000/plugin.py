@@ -112,7 +112,7 @@ class BasePlugin:
                     decoder = BinaryPayloadDecoder.fromRegisters(result.registers, byteorder=Endian.Big, wordorder=Endian.Big)
                     value = decoder.decode_32bit_int() if decode == 32 else decoder.decode_16bit_int() / 10
                     value = value * 10 if unit == 2 else value
-                    value = value * 100 if unit == 6 else value
+                    value = value * 10 if unit == 6 else value
                     if unit in Devices:
                         try:
                             Devices[unit].Update(nValue=0, sValue=str(value));
