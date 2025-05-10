@@ -84,7 +84,9 @@ class BasePlugin:
             14: ("AC Output Load", "General", 6),
             15: ("Operation Mode", "Selector Switch", 18, specialOptions, 0),
             16: ("Max Utility Charging", "General", 23),
-            17: ("Active Max Utility Charging", "Switch")
+            17: ("Active Max Utility Charging", "Switch"),
+            18: ("Charger Source Priority", "General", 19),
+            19: ("Active Charging Only From Sun", "Switch")
         }
 
         for unit, device_info_tuple in device_info.items():
@@ -141,7 +143,8 @@ class BasePlugin:
             "powmr/battery_state_of_charge": 13,
             "powmr/ac_output_load": 14,
             "powmr/operation_mode": 15,
-            "powmr/max_utility_charging_current": 16
+            "powmr/max_utility_charging_current": 16,
+            "powmr/charger_source_priority": 18
         }
 
         operation_modes = [
@@ -198,12 +201,13 @@ class BasePlugin:
 
     def onCommand(self, Unit, Command, Level, Color):
         Domoticz.Log(f"onCommand called: Unit={Unit}, Command={Command}, Level={Level}")
-        if Unit == 17:  # Наприклад, пристрій для відправки команд
+
+        if Unit == 17:  # Струм заряду з мережі
            if Command == "On":
                current = 90
                l = 1
            if Command == "Off":
-               current = 20
+               current = 2
                l = 0
            success = self.setChargingCurrent(current)
            if success:
@@ -211,7 +215,25 @@ class BasePlugin:
                Domoticz.Log(f"Charging current set to {current}A successfully.")
            else:
                Domoticz.Error(f"Failed to set charging current to {current}A.")
-    
+
+        if Unit == 19:  # Пріоритет від чого заряджати
+              # "Utility first": 0
+              # "Solar first": 1
+              # "Solar and Utility": 2
+              # "Only Solar": 3
+           if Command == "On": # Тільки з сонця
+               priority = 2
+               l = 1
+           if Command == "Off":
+               priority = 0
+               l = 0
+           success = self.setChargerSourcePriority(priority)
+           if success:
+               Devices[Unit].Update(nValue=l, sValue=str(Command))
+               Domoticz.Log(f"Charging charger source priority to {priority} successfully.")
+           else:
+               Domoticz.Error(f"Failed to set charging current to {priority}.")
+
 
     def setChargingCurrent(self, current):
         Domoticz.Log(f"Setting charging current to: {current}A")
@@ -219,6 +241,17 @@ class BasePlugin:
         try:
             self.mqttClient.publish(topic, str(current))
             Domoticz.Log(f"Published to MQTT: {topic} = {current}A")
+            return True
+        except Exception as e:
+            Domoticz.Error(f"Failed to publish MQTT message: {e}")
+            return False
+
+    def setChargerSourcePriority(self, priority):
+        Domoticz.Log(f"Setting charger source priority to: {priority}")
+        topic = "powmr/commands/change_charger_source_priority"
+        try:
+            self.mqttClient.publish(topic, str(priority))
+            Domoticz.Log(f"Published to MQTT: {topic} = {priority}")
             return True
         except Exception as e:
             Domoticz.Error(f"Failed to publish MQTT message: {e}")
