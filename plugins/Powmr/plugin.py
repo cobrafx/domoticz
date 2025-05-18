@@ -204,10 +204,10 @@ class BasePlugin:
 
         if Unit == 17:  # Струм заряду з мережі
            if Command == "On":
-               current = 90
+               current = 100
                l = 1
            if Command == "Off":
-               current = 2
+               current = 20
                l = 0
            success = self.setChargingCurrent(current)
            if success:

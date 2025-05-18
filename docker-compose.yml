@@ -35,9 +35,10 @@ services:
       - /dev/gpiomem:/dev/gpiomem
       - /dev/mem:/dev/mem
       #- /dev/ttyUSB0:/dev/ttyUSB0
-      - /dev/ttyPL2303:/dev/ttyUSB0
+      - /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0:/dev/ttyUSB0
       - /dev/gpiochip0:/dev/gpiochip0
       - /dev/gpiochip1:/dev/gpiochip1
+      - /dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A5069RR4-if00-port0:/dev/ttyRS485
     ports:
       - "8080:8080"
       - "443:443"
@@ -59,6 +60,7 @@ services:
       - ./plugins/Sun2000:/opt/domoticz/plugins/Sun2000
       - ./plugins/Tongou:/opt/domoticz/plugins/Tongou
       - ./plugins/BMS:/opt/domoticz/plugins/BMS
+      - ./plugins/JK_BMS:/opt/domoticz/plugins/JK_BMS
       - ./data:/config
       - ./plugins/SVT:/opt/domoticz/plugins/userdata/SVT
       - ./plugins/zigbee2mqtt:/opt/domoticz/userdata/plugins/zigbee2mqtt
@@ -101,7 +103,7 @@ services:
       devices:
         #- /dev/ttyACM0:/dev/ttyACM0
         # - /dev/ttyUSB1:/dev/ttyUSB1
-        - /dev/ttyCH341:/dev/ttyUSB1
+        - /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0:/dev/ttyCH341
         #- /dev/serial/by-id/usb-Texas_Instruments_CC2538_USB_CDC-if00:/dev/ttyACM0
       restart: always
       environment:

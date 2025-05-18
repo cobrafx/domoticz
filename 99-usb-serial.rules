@@ -1,0 +1,4 @@
+SUBSYSTEM=="tty", ENV{ID_SERIAL}=="1a86_USB_Serial", SYMLINK+="ttyCH341"
+SUBSYSTEM=="tty", ENV{ID_SERIAL}=="Prolific_Technology_Inc._USB-Serial_Controller", SYMLINK+="ttyPL2303"
+SUBSYSTEM=="tty", ATTRS{serial}=="A5069RR4", SYMLINK+="ttyRS485"
+

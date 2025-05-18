@@ -7,7 +7,7 @@ mqtt:
   base_topic: zigbee2mqtt
   server: mqtt://localhost
 serial:
-  port: /dev/ttyUSB1
+  port: /dev/ttyCH341
   adapter: zstack
 advanced:
   channel: 25
