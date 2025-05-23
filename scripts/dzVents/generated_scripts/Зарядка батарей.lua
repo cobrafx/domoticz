@@ -27,7 +27,7 @@ return {
           local limit_max_cell_voltage = tonumber(domoticz.devices('JK_BMS - Cell Voltage Overvoltage Protection').sValue) - 0.025
           
           if(soc_value < 100) then
-              if(charging_priority ~= 0 and soc_value < 90) then
+              if(charging_priority ~= 0 and soc_value < 92) then
                 charging_only_from_sun.switchOff()
                 local msg = "Почато зарядку акумуляторів (SOC " .. bms_soc.sValue .. "%)!"
                 domoticz.notify('BMS', msg, domoticz.PRIORITY_HIGH)
@@ -40,19 +40,19 @@ return {
               end
           end
 
-        --   if(kotel.state == "On") then
-        --     if(charging_priority ~= 2 and current_value ~= 20) then
-        --         max_utility_charging.switchOff()
-        --         local msg = "Переведено зарядку акумуляторів (SOC " .. bms_soc.sValue .. "%) на 20A!"
-        --         domoticz.notify('Powmr', msg, domoticz.PRIORITY_HIGH)
-        --     end
-        --   else
-        --     if(current_value ~= 90) then
-        --         local msg = "Переведено зарядку акумуляторів (SOC " .. bms_soc.sValue .. "%) на 90A!"
-        --         domoticz.notify('Powmr', msg, domoticz.PRIORITY_HIGH)
-        --         max_utility_charging.switchOn()
-        --     end
-        --   end
+          if(kotel.state == "On") then
+            if(charging_priority ~= 2 and current_value ~= 20) then
+                max_utility_charging.switchOff()
+                local msg = "Переведено зарядку акумуляторів (SOC " .. bms_soc.sValue .. "%) на 20A!"
+                domoticz.notify('Powmr', msg, domoticz.PRIORITY_HIGH)
+            end
+          else
+            if(current_value ~= 100) then
+                local msg = "Переведено зарядку акумуляторів (SOC " .. bms_soc.sValue .. "%) на 100A!"
+                domoticz.notify('Powmr', msg, domoticz.PRIORITY_HIGH)
+                max_utility_charging.switchOn()
+            end
+          end
       end
     end
 }

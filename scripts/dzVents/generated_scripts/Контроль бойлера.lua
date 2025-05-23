@@ -1,16 +1,16 @@
 return {
    on = {
       devices = {
-         "Powmr - Operation Mode"
+         "Powmr - AC Status"
       },
         timer = {'Every minute'}
    },
    execute = function(domoticz, switch)
-      local power = domoticz.devices('Powmr - Operation Mode')
+      local ac_status = domoticz.devices('Powmr - AC Status')
       local pv_voltage = domoticz.devices("Powmr - PV Voltage")
       local boiler = domoticz.devices("Бойлер - State")
       
-      if(power.nValue == 0) then
+      if(ac_status.nValue == 0) then
 
         if(boiler.state == "On") then
            

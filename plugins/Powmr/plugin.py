@@ -86,7 +86,8 @@ class BasePlugin:
             16: ("Max Utility Charging", "General", 23),
             17: ("Active Max Utility Charging", "Switch"),
             18: ("Charger Source Priority", "General", 19),
-            19: ("Active Charging Only From Sun", "Switch")
+            19: ("Active Charging Only From Sun", "Switch"),
+            20: ("AC Status", "Switch")
         }
 
         for unit, device_info_tuple in device_info.items():
@@ -199,6 +200,15 @@ class BasePlugin:
                 else:
                     Devices[unit].Update(nValue=0, sValue=str(value))
 
+            if unit == 1:
+                if value < 160:
+                    if Devices[20].nValue == 1:
+                       Devices[20].Update(nValue=0, sValue="0")
+                else:
+                    if Devices[20].nValue == 0:
+                       Devices[20].Update(nValue=1, sValue="1")
+
+
     def onCommand(self, Unit, Command, Level, Color):
         Domoticz.Log(f"onCommand called: Unit={Unit}, Command={Command}, Level={Level}")
 
@@ -207,7 +217,7 @@ class BasePlugin:
                current = 100
                l = 1
            if Command == "Off":
-               current = 20
+               current = 10
                l = 0
            success = self.setChargingCurrent(current)
            if success:

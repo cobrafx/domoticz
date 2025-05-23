@@ -2,18 +2,18 @@ return {
    on = {
       devices = {
          "Температура у гардеробній",
-         "Powmr - Operation Mode"
+         "Powmr - AC Status"
       }
         -- timer = {'Every minute'}
    },
    execute = function(domoticz, switch)
-      local power = domoticz.devices('Powmr - Operation Mode')
+      local ac_status = domoticz.devices('Powmr - AC Status')
       local temp = domoticz.utils.round(domoticz.devices("Температура у гардеробній").temperature,1)
       local kotel = domoticz.devices('Контакт розетки котла')
       local thermostat = domoticz.devices('Термостат будинку')
       local delta = 0.2
 
-      if(power.nValue == 0) then
+      if(ac_status.nValue == 0) then
 
          if(kotel.state == "On") then
            kotel.switchOff()
